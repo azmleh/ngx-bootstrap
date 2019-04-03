@@ -32,5 +32,5 @@ export function isDisabledDate(date: Date, datesDisabled: Date[]): boolean {
     return false;
   }
 
-  return datesDisabled.some((dateDisabled: Date) => isSameDay(date, dateDisabled, 'date'));
+  return datesDisabled.some((dateDisabled: Date) => isSameDay(date, dateDisabled));
 }
