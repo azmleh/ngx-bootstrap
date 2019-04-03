@@ -42,7 +42,8 @@ export function flagDaysCalendar(formattedMonth: DaysCalendarViewModel,
 
         const isDisabled = options.isDisabled
           || isBefore(day.date, options.minDate, 'day')
-          || isAfter(day.date, options.maxDate, 'day');
+          || isAfter(day.date, options.maxDate, 'day') ||
+          isDisabledDate(day.date, options.datesDisabled);
 
         // decide update or not
         const newDay = Object.assign({}, day, {

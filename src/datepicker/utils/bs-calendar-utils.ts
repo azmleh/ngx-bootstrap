@@ -1,6 +1,6 @@
 import { getDayOfWeek, isFirstDayOfWeek } from '../../bs-moment/utils/date-getters';
 import { shiftDate } from '../../bs-moment/utils/date-setters';
-import { isSameOrAfter, isSameOrBefore, isSame } from '../../bs-moment/utils/date-compare';
+import { isSameOrAfter, isSameOrBefore, isSameDay } from '../../bs-moment/utils/date-compare';
 import { endOf, startOf } from '../../bs-moment/utils/start-end-of';
 
 export function getStartingDayOfCalendar(date: Date, options: {firstDayOfWeek?: number}): Date {
@@ -32,5 +32,5 @@ export function isDisabledDate(date: Date, datesDisabled: Date[]): boolean {
     return false;
   }
 
-  return datesDisabled.some((dateDisabled: Date) => isSame(date, dateDisabled, 'date'));
+  return datesDisabled.some((dateDisabled: Date) => isSameDay(date, dateDisabled, 'date'));
 }
