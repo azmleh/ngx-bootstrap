@@ -22,6 +22,7 @@ export class BsDatepickerState implements DatepickerRenderOptions, DatepickerFor
   view: BsDatepickerViewState;
 
   isDisabled?: boolean;
+  datesDisabled?: Date[];
   // bounds
   minDate?: Date;
   maxDate?: Date;

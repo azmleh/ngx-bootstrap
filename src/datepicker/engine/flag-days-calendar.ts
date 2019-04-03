@@ -1,7 +1,7 @@
 import { DaysCalendarViewModel, DayViewModel, WeekViewModel } from '../models/index';
 import { isSameDay, isSameMonth } from '../../bs-moment/utils/date-getters';
 import { isAfter, isBefore } from '../../bs-moment/utils/date-compare';
-import { isMonthDisabled } from '../utils/bs-calendar-utils';
+import { isMonthDisabled, isDisabledDate } from '../utils/bs-calendar-utils';
 import { shiftDate } from '../../bs-moment/utils/date-setters';
 
 export interface FlagDaysCalendarOptions {
@@ -13,6 +13,7 @@ export interface FlagDaysCalendarOptions {
   selectedRange: Date[];
   displayMonths: number;
   monthIndex: number;
+  datesDisabled: Date[];
 }
 
 export function flagDaysCalendar(formattedMonth: DaysCalendarViewModel,

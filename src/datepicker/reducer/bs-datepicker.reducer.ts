@@ -239,6 +239,7 @@ function flagReducer(state: BsDatepickerState, action: Action): BsDatepickerStat
         isDisabled: state.isDisabled,
         minDate: state.minDate,
         maxDate: state.maxDate,
+        datesDisabled: state.datesDisabled,
         hoveredMonth: state.hoveredMonth,
         displayMonths: state.displayMonths,
         monthIndex
