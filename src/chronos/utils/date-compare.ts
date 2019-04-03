@@ -88,3 +88,7 @@ export function isSameOrBefore(
 ): boolean {
   return isSame(date1, date2, units) || isBefore(date1, date2, units);
 }
+
+export function isSameDay(date1: Date, date2: Date):boolean{
+  return (date1.getDay() == date2.getDay());
+}

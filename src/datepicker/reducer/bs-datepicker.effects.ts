@@ -69,6 +69,14 @@ export class BsDatepickerEffects {
     return this;
   }
 
+  setDatesDisabled(value: Date[]): BsDatepickerEffects {
+    this._store.dispatch(this._actions.datesDisabled(value));
+
+    return this;
+  }
+
+
+
   /* Set rendering options */
   setOptions(_config: BsDatepickerConfig): BsDatepickerEffects {
     const _options = Object.assign({locale: this._localeService.currentLocale}, _config);

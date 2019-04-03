@@ -27,6 +27,7 @@ export class BsDatepickerState
   view: BsDatepickerViewState;
 
   isDisabled?: boolean;
+  datesDisabled?: Date[];
   // bounds
   minDate?: Date;
   maxDate?: Date;

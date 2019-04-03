@@ -88,6 +88,10 @@ export class BsDatepickerDirective implements OnInit, OnDestroy, OnChanges {
    * Maximum date which is available for selection
    */
   @Input() maxDate: Date;
+    /**
+   * Disable specific dates
+   */
+  @Input() datesDisabled: Date[];
   /**
    * Emits when datepicker value has been changed
    */
@@ -138,6 +142,10 @@ export class BsDatepickerDirective implements OnInit, OnDestroy, OnChanges {
 
     if (changes.isDisabled) {
       this._datepickerRef.instance.isDisabled = this.isDisabled;
+    }
+
+    if (changes.datesDisabled) {
+      this._datepickerRef.instance.datesDisabled = this.datesDisabled;
     }
   }
 
@@ -203,12 +211,14 @@ export class BsDatepickerDirective implements OnInit, OnDestroy, OnChanges {
   /**
    * Set config for datepicker
    */
+
   setConfig(): void {
     this._config = Object.assign({}, this._config, this.bsConfig, {
       value: this._bsValue,
       isDisabled: this.isDisabled,
       minDate: this.minDate || this.bsConfig && this.bsConfig.minDate,
-      maxDate: this.maxDate || this.bsConfig && this.bsConfig.maxDate
+      maxDate: this.maxDate || this.bsConfig && this.bsConfig.maxDate,
+      datesDisabled: this.datesDisabled || this._config && this._config.datesDisabled
     });
   }
 
