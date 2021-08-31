@@ -52,11 +52,11 @@ export function mergeConfigs(parentConfig: LocaleData,
       continue;
     }
     if (isObject(parentConfig[childProp]) && isObject(childConfig[childProp])) {
-      res[childProp] = {};
+      (res[childProp] as Object) = {};
       Object.assign(res[childProp], parentConfig[childProp]);
       Object.assign(res[childProp], childConfig[childProp]);
     } else if (childConfig[childProp] != null) {
-      res[childProp] = childConfig[childProp];
+      (res[childProp] as Object) = childConfig[childProp];
     } else {
       delete res[childProp];
     }
@@ -69,7 +69,7 @@ export function mergeConfigs(parentConfig: LocaleData,
       isObject(parentConfig[parentProp as keyof LocaleData])
     ) {
       // make sure changes to properties don't modify parent config
-      res[parentProp as keyof LocaleData] = Object.assign({}, res[parentProp as keyof LocaleData]);
+      (res[parentProp as keyof LocaleData] as Object) = Object.assign({}, res[parentProp as keyof LocaleData]);
     }
   }
 

@@ -23,7 +23,7 @@ export function addUnitAlias(unit: ExtendedUnitOfTime, shorthand: string): void 
   aliases[lowerCase] = aliases[`${lowerCase}s`] = aliases[shorthand] = _unit;
 }
 
-export function normalizeUnits(units: string | string[]): string {
+export function normalizeUnits(units: number | string | string[]): string {
   return isString(units) ? aliases[units] || aliases[units.toLowerCase()] : undefined;
 }
 
